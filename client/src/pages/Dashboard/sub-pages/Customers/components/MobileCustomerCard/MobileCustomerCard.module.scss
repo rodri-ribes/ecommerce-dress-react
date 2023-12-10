@@ -1,0 +1,120 @@
+@import '../../../../../../assets/style/style.scss';
+
+.container{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    gap: 1rem;
+ 
+    .container__card{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        gap: 1rem;
+        background-color: $color-secondary;
+        padding: 1rem;
+        border-radius: 5px;
+        position: relative;
+
+        .container__card__header{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            gap: 1rem;
+         
+            img{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: 0 0;
+            }
+
+            h2{
+                margin-left: .5rem;
+                font-family: "Nunito", sans-serif;
+            }
+
+            button{
+                background-color: transparent;
+                border: none;
+                position: absolute;
+                right: .5rem;
+                transition: all 500ms;
+                i{
+                    font-size: 2rem;
+                }
+            }
+
+            .btn_animation{
+                transform: rotate(-180deg);
+            }
+
+        }
+
+        @keyframes animationContent {
+            0%{
+                height: 0;
+            }
+            25%{
+                height: 50px;
+            }
+            50%{
+                height: 100px;
+            }
+            75%{
+                height: 150px;
+            }
+            100%{
+                height: auto;
+            }
+        }
+
+        .container__card__content{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: .5rem;
+            overflow: hidden;
+            animation-name: animationContent;
+            animation-duration: 300ms;
+            animation-iteration-count: 1;
+            animation-fill-mode: backwards;
+
+            .container__card__content_btn{
+                background-color: transparent;
+                border: none;
+                font-size: 1.5rem;
+            }
+            
+            li{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: .5rem;
+                font-size: 1.3rem;
+
+                button{
+                    background-color: transparent;
+                    border: none;
+                    i{
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 968px){
+    .container{
+        display: flex;
+    }
+}

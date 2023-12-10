@@ -1,0 +1,132 @@
+@import '../../../../assets/style/style.scss';
+
+.container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    position: relative;
+ 
+
+    .container__form{
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+        width: 100%;
+        background-color: white;
+        padding: 2rem 0;
+        border-radius: 5px;
+        .container__form__section{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 45%;
+        }
+
+        .container__form__section__group{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            width: 100%;
+            margin: 1rem auto;
+
+            .container__form__section__group__price{
+                position: relative;
+                width: 100%;
+
+                p{
+                    position: absolute;
+                    bottom: 10px;
+                    left: 10px;
+                }
+
+                .container__form__section__group_input_default{
+                    width: 100%;
+                    padding: 10px;
+                    border: none;
+                    height: 40px;
+                    border: 1px solid black;
+                    border-radius: 3px;
+                    background-color: transparent;
+                    outline: none;
+                }
+
+
+                .container__form__section__group_input{
+                    width: 100%;
+                    padding: 10px 15px 10px 30px;
+                }
+
+                
+                .container__form__section__group_textarea{
+                    height: 80px;
+                    resize: none;
+                    font-family: sans-serif;
+                }
+            }
+
+
+
+            .container__form__section__group_input{
+            //    @include styleInput;
+                border: none;
+                padding: 10px;
+                height: 40px;
+                border: 1px solid black;
+                border-radius: 3px;
+                background-color: transparent;
+                outline: none;
+            }
+
+            .container__form__section__group_textarea{
+                height: 80px;
+                resize: none;
+                font-family: sans-serif;
+            }
+
+            .container__form__section__group_error{
+                color: red;
+                font-weight: 600;
+                font-size: .9rem;
+                font-family: 'Exo', sans-serif;
+                margin-left: .5rem;
+                margin-top: .5rem;
+            }
+        }
+    }
+
+    .container__button{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 20%;
+        margin-top: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 968px){
+    .container{
+        width: 100%;
+        height: auto;
+        
+        .container__form{
+            flex-direction: column;
+            width: 100%;
+            padding: 1rem;
+            .container__form__section{
+                width: 100%;
+            }
+        }
+    
+        .container__button{
+            width: auto;
+            margin: 1rem auto;
+        }
+    
+    }
+}

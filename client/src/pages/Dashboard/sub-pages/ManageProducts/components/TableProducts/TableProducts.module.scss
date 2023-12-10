@@ -1,0 +1,74 @@
+@import '../../../../../../assets/style/style.scss';
+
+
+
+
+table{
+    width: 100%;
+    background-color: $color-secondary;
+    border-radius: 5px;
+    thead{
+        background-color: $color-three;
+        height: 50px;
+        tr{
+            th{
+                color: white;
+                font-family: 'Nunito', sans-serif;
+                font-size: 1.1rem;
+                &:nth-child(1){
+                    border-radius: 5px 0 0 0px;
+                }
+    
+                &:nth-child(8){
+                    border-radius: 0 5px 0px 0;
+                }
+            }
+
+        }
+    }
+    tbody{
+        width: 100%;
+
+        .hiddenProduct{
+            opacity: .5;
+        }
+        tr{
+            width: 100%;
+
+            td{
+                text-align: center;
+                position: relative;
+
+                &:nth-child(1), &:nth-child(2){
+                    text-align: start;
+                }
+                
+                img{
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    object-position: 0 0;
+                    margin: .5rem;
+                }
+                i{
+                    font-size: 1.3rem;
+                    cursor: pointer;
+                }
+
+                button{
+                    margin: 0 auto;
+                    background-color: transparent;
+                    border: none;
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 968px){
+    table{
+        display: none;
+    }
+}

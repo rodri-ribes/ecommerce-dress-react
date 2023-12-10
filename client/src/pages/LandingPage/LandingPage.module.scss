@@ -1,0 +1,183 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    gap: 2rem;
+
+    .container__oneSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .container__twoSection{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        height: 90vh;
+        padding: 3rem 0;
+        margin: 0 auto;
+        
+        h3{
+            font-family: "Nunito", sans-serif;
+            font-size: 3.5rem;
+            color: white;
+            z-index: 30;
+            bottom: 1.5rem;
+            left: 2rem;
+            
+            position: absolute;
+            text-shadow: 0 5px 5px rgba(0, 0, 0, 0.700);
+        }
+
+      
+      
+
+        .container__twoSection__left{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 49.5%;
+            height: 100%;
+            
+            .container__twoSection__left__top{
+                width: 100%;
+                height: 58%;
+                position: relative;
+               
+            }
+            .container__twoSection__left__bottom{
+                width: 100%;
+                height: 40%;
+                position: relative;
+
+            }
+        }
+
+        .container__twoSection__right{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 49.5%;
+            height: 100%;
+            .container__twoSection__right__top{
+                width: 100%;
+                height: 40%;
+                position: relative;
+            }
+            .container__twoSection__right__bottom{
+                width: 100%;
+                height: 58%;
+                position: relative;
+            }
+        }
+    }
+
+    .container__threeSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+
+        .container__threeSection__filters{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 100%;
+
+            button{
+                background-color: transparent;
+                border: none;
+                outline: none;
+                font-size: 1.2rem;
+                cursor: pointer;
+                // transition: all 300ms;
+                &:nth-child(2){
+                    margin: 0 3rem;
+                }
+                
+                &:hover{
+                    
+                    border-bottom: 2px solid blue;
+                }
+            }
+        }
+
+        .container__threeSection__products{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media screen and (max-width: 968px){
+    .container{
+        .container__oneSection{
+            height: auto
+        }
+    
+        .container__twoSection{
+            max-width: 95%;
+            margin: 0 auto;
+            height: 100%;
+            padding: 0 1rem;
+
+            .container__twoSection__left{
+                width: 100%;
+                height: 40vh;
+
+                .container__twoSection__left__top{
+                    width: 100%;
+                    height: 50%;
+                }
+                .container__twoSection__left__bottom{
+                    width: 100%;
+                    height: 50%;
+                }
+            }
+    
+            .container__twoSection__right{
+                width: 100%;
+                height: 40vh;
+                .container__twoSection__right__top{
+                    width: 100%;
+                    height: 50%;
+                }
+                .container__twoSection__right__bottom{
+                    width: 100%;
+                    height: 50%;
+                }
+            }
+        }
+    
+        .container__threeSection{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            
+            .container__threeSection__products{
+                margin: 0 auto;
+                width: 95%;
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+
+            }
+        }
+    }
+}

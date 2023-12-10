@@ -1,0 +1,134 @@
+@import '../../../assets/style/style.scss';
+
+.container{
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+    width: auto;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    gap: 2rem;
+    .container__selects{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+
+        .container__selects_input{
+            width: 40%;
+        }
+
+        .container__selects__buttons{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            gap: 1rem;
+
+            .container__selects__buttons_create{
+                @include styleButton;
+                width: 50%;
+                height: 45px;
+            }
+    
+            .container__selects__buttons_delete{
+                @include styleButtonTwo;
+                width: 50%;
+                height: 45px;
+            }
+        }
+    }
+
+    .container__data{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-width: 70%;
+        width: auto;
+
+        img{
+            width: 150px;
+            height: 150px;
+            object-position: 0 0;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .container__data__info{
+            margin-left: 1.5rem;
+            h3{
+                font-family: sans-serif;
+                font-size: 1.5rem;
+            }
+    
+            p{
+                font-size: 1.4rem;
+            }
+    
+            b{
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 968px){
+    .container{
+        min-width: 100%;
+        width: auto;
+        flex-direction: column-reverse;
+
+        .container__selects{
+            width: 95%;
+    
+            .container__selects_input{
+                width: 60%;
+            }
+    
+            .container__selects__buttons{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+                gap: 1rem;
+    
+                .container__selects__buttons_create{
+                    width: 50%;
+                    height: 45px;
+                }
+        
+                .container__selects__buttons_delete{
+                    width: 50%;
+                    height: 45px;
+                }
+            }
+        }
+    
+        .container__data{
+            min-width: 100%;
+            img{
+                width: 100px;
+                height: 100px;
+            }
+    
+            .container__data__info{
+                margin-left: 1.5rem;
+                h3{
+                    font-family: "Nunito",sans-serif;
+                    font-size: 1.5rem;
+                }
+        
+                p{
+                    font-size: 1.4rem;
+                }
+        
+                b{
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,136 @@
+@import '../../assets/style/style.scss';
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    z-index: 30;
+    background-color: white;
+    // right: 3rem;
+    // top: 9vh;
+    right: 1rem;
+    top: 9.5vh;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.500);
+    padding: 1rem;
+    @include spawnEffect;
+
+
+    .container_emptyCart{
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        margin: 1.5rem auto; 
+        opacity: .3;
+    }
+
+    .container__products{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        height: 80%;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar{
+            width: 8px;
+        }
+        &::-webkit-scrollbar-track{
+            background: white;
+        }
+        &::-webkit-scrollbar-thumb{
+            background: $color-three;
+            border-radius: 50px;
+        }
+
+        .container__products__card{
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            margin-bottom: 1rem;
+            position: relative;
+            img{
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                object-position: 0 0;
+            }
+
+            .container__products__card__warning{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 10;
+                p{
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+        
+                .container__products__card__warning_drop{
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    color: $color-three;
+                    cursor: pointer;
+                    position: relative;
+                    margin-top: .5rem;
+                }
+            }
+
+
+
+            .container__products__card__content{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin-left: .5rem;
+
+                .container__products__card__content__price{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    b{
+                        margin-left: .5rem;
+                    }
+                }
+            }
+
+            button{
+                background-color: transparent;
+                border: none;
+                outline: none;
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+
+    .container__btns{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 15%;
+        a{
+            @include styleButtonContentDetail;
+            width: 100%;
+            text-decoration: none;
+            text-align: center;
+        }
+    }
+}
+
+
+@media screen and (max-width: 968px){
+    
+}

@@ -1,0 +1,196 @@
+@import '../../../../assets/style/style.scss';
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    border-radius: 5px;
+    .container__shopping{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        gap: 1rem;
+        list-style: none;
+
+        .container__shopping__card{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            background-color: $color-secondary;
+            padding: 1rem;
+            border-radius: 5px;
+            gap: 1rem;
+            header{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                width: 100%;
+                padding: .5rem;
+                h3{
+                    font-family: "Jost", sans-serif;
+                    font-size: 1.5rem;
+                }
+
+                button{
+                    border: none;
+                    background-color: transparent;
+                    font-size: 1.8rem;
+                    cursor: pointer;
+                    transition: all 500ms;
+                }
+
+                .btn_animation{
+                    transform: rotate(-180deg);
+                }
+            }
+
+            @keyframes animationContent {
+                0%{
+                    height: 0;
+                }
+                25%{
+                    height: 50px;
+                }
+                50%{
+                    height: 100px;
+                }
+                75%{
+                    height: 150px;
+                }
+                100%{
+                    height: auto;
+                }
+            }
+
+            .container__shopping__card__content{
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                width: 100%;
+                height: auto;
+                overflow-y: hidden;
+                animation-name: animationContent;
+                animation-duration: 300ms;
+                animation-iteration-count: 1;
+                animation-fill-mode: backwards;
+    
+
+                .container__shopping__card__content__data{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    width: 50%;
+                    gap: .5rem;
+
+                    .container__shopping__card__content__data__list{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        width: 100%;
+                        list-style: none;
+                        gap: .8rem;
+
+                        li{
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            gap: .5rem;
+
+                            b{
+                                font-family: "Jost", sans-serif;
+                            }
+
+                            a{
+                                text-decoration: none;
+                                display: flex;
+                                align-items: center;
+                                gap: .5rem;
+                            }
+                        }
+                    }
+
+                    .container__shopping__card__content__data__notification{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        width: 100%;
+                        gap: .8rem;
+                        padding: .5rem 0;
+
+                        h3{
+                            font-family: "Jost", sans-serif;
+                        }
+
+                        
+                        .container__shopping__card__content__data__notification__buttons{
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            gap: .5rem;
+                            margin-left: .5rem;
+                            width: 100%;
+
+                            button{
+                                width: 150px;
+                            }
+                        }
+                    }
+                }
+                .container__shopping__card__content__products{
+                    width: 45%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 968px){
+    .container{
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+  
+        .container__shopping{
+            width: 100%;
+            justify-content: flex-start;
+            align-items: flex-start;
+            .container__shopping__card{
+                width: 100%;
+                gap: 1rem;
+                padding: 0;
+                .container__shopping__card__content{
+                    flex-direction: column-reverse;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 auto;
+                    width: 100%;
+                    padding: 1rem;
+                 
+                    .container__shopping__card__content__data{
+                        width: 100%;
+
+                        .container__shopping__card__content__data__list{
+                            width: 100%;
+                        }
+    
+                    }
+                    .container__shopping__card__content__products{
+                        width: 100%;
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

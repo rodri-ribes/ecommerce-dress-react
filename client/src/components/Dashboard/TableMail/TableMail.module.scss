@@ -1,0 +1,74 @@
+@import '../../../assets/style/style.scss';
+
+table{
+    width: 100%;
+    background-color: $color-secondary;
+    border-radius: 5px;
+    thead{
+        background-color: $color-three;
+        height: 50px;
+        th{
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.1rem;
+            &:nth-child(1){
+                border-radius: 5px 0 0 0px;
+            }
+
+            &:nth-child(n):last-child{
+                border-radius: 0 5px 0px 0;
+            }
+            
+        }
+    }
+    tbody{
+        width: 100%;
+        tr{
+            width: 100%;
+            height: 45px;
+            td{
+                position: relative;
+                text-align: center;
+                &:nth-child(1), &:nth-child(2){
+                    text-align: center;
+                }
+
+                a{
+                    text-decoration: none;
+                    color: $color-three;
+                        
+                    i{
+                        margin-left: .5rem;
+                    }
+                }
+
+                img{
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    object-position: 0 0;
+                    margin: .5rem;
+                }
+
+                button{
+                    margin: 0 auto;
+                    background-color: transparent;
+                    border: none;
+                    color: $color-three;
+                }
+
+
+                i{
+                    font-size: 1.3rem;
+                    cursor: pointer;
+                }
+
+                .options_btn{
+                    color: black;
+                }
+            }
+        }
+
+    }
+}

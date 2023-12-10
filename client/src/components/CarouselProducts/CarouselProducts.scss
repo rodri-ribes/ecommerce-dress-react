@@ -1,0 +1,45 @@
+// .swiper-button-prev, .swiper-button-next {
+//     color: black;
+// }
+
+
+
+.swiper-pagination{
+    text-align: center;
+    transform: translate3d(-25%, -70px,0 );
+
+    .swiper-pagination-bullet{
+        height: 10px;
+        border-radius: 5px;
+        background: rgb(99, 99, 99);
+        width: 15px;
+
+    }
+
+    .swiper-pagination-bullet-active{
+        background: white;
+        width: 10px;
+        height: 10px;
+
+    }
+}
+
+@media screen and (max-width: 968px){
+    .swiper-pagination{
+        text-align: center;
+        transform: translate3d(-35%, 0px,0 );
+    
+        .swiper-pagination-bullet{
+            height: 10px;
+            border-radius: 5px;
+            width: 15px;
+        }
+    
+        .swiper-pagination-bullet-active{
+            background: white;
+            width: 10px;
+            height: 10px;
+    
+        }
+    }
+}

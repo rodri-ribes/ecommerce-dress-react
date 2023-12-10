@@ -1,0 +1,41 @@
+@import '../../../../../../assets/style/style.scss';
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .container__data{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: .5rem;
+        b,p{
+            font-family: 'Raleway', sans-serif;
+        }
+    
+        input{
+            @include stlyeInputDashboard;
+            height: 30px;
+        }
+    }
+
+    .container_error{
+        color: red;
+        font-weight: 600;
+        font-family: 'Exo', sans-serif;
+        margin-left: .5rem;
+    }
+}
+
+
+@media screen and (max-width: 968px){
+    .container{
+        width: 100%;
+
+        .container__data{
+            width: 100%;
+            flex-direction: column;
+        }
+    }
+}

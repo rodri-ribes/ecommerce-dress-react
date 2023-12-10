@@ -1,0 +1,210 @@
+@import "../../../../assets/style/style.scss";
+
+.container{
+    display: flex;    
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    position: relative;
+    background-color: $color-secondary;
+    border-radius: 5px;
+    .container_buttonEdit{
+        align-self: flex-end;
+        position: absolute;
+        border: none;
+        cursor: pointer;
+        i{
+            font-size: 2rem;
+        }
+    }
+    .container__oneSection{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+
+        .container__oneSection__image{
+            position: relative;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            img{
+                border-radius: 50%;
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                object-position:  0 0;
+            }
+
+            .container__oneSection__image__svg{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                right: -.5rem;
+                bottom: -.5rem;
+                background-color: white;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.500);
+                cursor: pointer;
+
+                i{
+                    cursor: pointer;
+                }
+
+                input{
+                    opacity: 0;
+                    position: absolute;
+                }
+            }
+        }
+
+        .container__oneSection__content{
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            margin-left: 1rem;
+            .container__oneSection__content__group{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                // width: 100%;
+                .container__oneSection__content__group__data{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: 70%;
+
+                    .container__oneSection__content__group__data_input{
+                        @include styleInputProfile;
+                        width: 100%;
+                    }
+
+                    p{
+                        font-size: 1.2rem;
+                    }
+                }
+
+                &:nth-child(2){
+                    .container__oneSection__content__group__data{
+                        .container__oneSection__content__group__data_input, p{
+                            margin-left: .5rem;
+                        }
+                    }
+                }
+
+                .container__oneSection__content__group_error{
+                    @include styleErrorProfile;
+                }
+            }
+        }
+    }
+
+    .container__twoSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 2rem;
+
+        .container__twoSection__home{
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            h3{
+                font-family: 'Dosis', sans-serif;
+                font-size: 1.5rem;
+            }
+        }
+
+        .container__twoSection__group{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            margin-bottom: .5rem;
+            .container__twoSection__group__data{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+
+                .container__twoSection__group__data_typeCamp{
+                    margin-right: .5rem;
+                    font-size: 1.2rem;
+                    font-family: 'Cabin', sans-serif;
+                    font-weight: 600;
+                }
+
+                p{
+                    font-size: 1.2rem   
+                }
+
+                .container__twoSection__group__data_input{
+                    @include styleInputProfile;
+                    margin-left: 1rem
+                }
+            }
+            
+            .container__twoSection__group_error{
+                @include styleErrorProfile;
+            }
+        }
+    }
+
+    .container__buttons{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        margin-top: 1rem;
+        gap: 1rem;
+        .container__buttons_btn_err{
+            @include styleButtonRed;
+            width: 200px;
+        }
+
+        .container__buttons_btn{
+            @include styleButton;
+            width: 200px;
+        
+        }
+    }
+
+}
+
+@media screen and (max-width: 968px){
+    .container{
+        width: 100%;
+        .container__oneSection{
+            .container__oneSection__content{
+                width: 60%;
+                .container__oneSection__content__group{
+                    width: 100%;
+                    .container__oneSection__content__group__data{
+                        width: 100%;
+                        .container__oneSection__content__group__data_input{
+                            width: 100%;
+                            
+                        }
+                    }
+                   
+                }
+            }
+        }
+
+       .container__buttons{
+            flex-direction: column;
+            align-items: flex-end;
+            width: 100%;
+       }
+    }
+}

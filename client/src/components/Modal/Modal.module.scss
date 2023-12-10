@@ -1,0 +1,117 @@
+@import '../../assets/style/style.scss';
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgb(0, 0, 0, 0.800);
+    z-index: 500;
+
+    .container__content{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        width: 90%;
+        height: 80vh;
+        margin: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 5px;
+        background-color: white;
+        box-shadow: 0 0 10px black;
+
+        animation-name: animationModal;
+        animation-duration: 200ms;
+        animation-iteration-count: 1;
+
+        header{
+            display: flex;
+            justify-content: flex-end;
+            button{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                transition: all 300ms;
+                width: 50px;
+                height: 50px;
+                border: none;
+                i{
+                    font-size: 2.5rem;
+                    color: gray;
+                    cursor: pointer;
+                    transition: all 300ms;
+                } 
+
+                &:Hover{
+                    background-color: rgb(220, 220, 220);
+                    i{
+                        color: black;
+                    }
+                }
+            }
+        }
+
+
+        .container__content__data{
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+
+        @keyframes animationModal {
+            0%{
+                transform: translateY(100vh);
+            }
+            25%{
+                transform: translateY(75vh);
+            }
+            50%{
+                transform: translateY(50vh);
+            }
+            75%{
+                transform: translateY(25vh);
+            }
+            100%{
+                transform: translateY(0vh);
+            }
+        }
+
+       
+    }
+}
+
+@media screen and (max-width: 968px){
+    .container{
+        width: 100%;
+        height: 100vh;
+        z-index: 1000;
+
+        .container__content{
+            width: 95%;
+            height: 75%;
+            
+            .container__content__data{
+                flex-direction: column;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}

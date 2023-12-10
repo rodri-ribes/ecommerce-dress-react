@@ -1,0 +1,96 @@
+@import '../../../assets/style/style.scss';
+
+.container{
+    height: 45px;
+    width: auto;
+    i{
+      margin-right: .5rem;
+    }
+
+    .lds_ellipsis {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        // height: 30px;
+        height: 100%;
+        transform: translate(5px, 0);
+         div {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #fff;
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+
+          &:nth-child(1) {
+            left: 8px;
+            animation: lds_ellipsis1 0.6s infinite;
+          }
+          &:nth-child(2) {
+            left: 8px;
+            animation: lds_ellipsis2 0.6s infinite;
+          }
+
+          &:nth-child(3) {
+            left: 32px;
+            animation: lds_ellipsis2 0.6s infinite;
+          }
+
+          &:nth-child(4) {
+            left: 56px;
+            animation: lds_ellipsis3 0.6s infinite;
+          }
+        }
+        @keyframes lds_ellipsis1 {
+          0% {
+            transform: scale(0);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+        @keyframes lds_ellipsis3 {
+          0% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(0);
+          }
+        }
+        @keyframes lds_ellipsis2 {
+          0% {
+            transform: translate(0, 0);
+          }
+          100% {
+            transform: translate(24px, 0);
+          }
+        }
+      }
+}
+
+.container_v1{
+  @include styleButton;
+  border-radius: 5px;
+
+}
+.container_v2{
+  @include styleButtonTwo;
+  border-radius: 5px;
+
+
+}
+
+.container_danger{
+  @include styleButtonRed;
+  border-radius: 5px;
+
+}
+
+
+@media screen and (max-width: 968px){
+  .container{
+    width: auto;
+  }
+}

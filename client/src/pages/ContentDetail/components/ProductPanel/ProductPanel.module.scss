@@ -1,0 +1,136 @@
+@import '../../../../assets/style/style.scss';
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 35%;
+    height: 100%;
+    padding: 1rem;
+    position: relative;
+    background-color: $color-secondary;
+
+    .container_sold{
+        font-family: sans-serif;
+        font-size: 1.2rem;
+        margin-bottom: .5rem;
+    }
+
+    h3{
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.3rem;
+        word-break: break-all;
+        max-height: 65px;
+        height: auto;
+        line-height: 25px;
+    }
+
+    .container_btnfav{
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        background-color: transparent;
+        border: none;
+        i{
+            font-size: 2rem;
+            color: red;
+        }
+    }
+
+    .container__price{
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: .5rem;
+        line-height: 20px;
+
+        b{
+            font-family: "Jost", sans-serif;
+        }
+
+        .container__price_price{   
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: .5rem;
+            font-size: 2rem;
+            small{
+                color: green;
+                font-size: 1.2rem;
+            }
+        }
+        
+        .container__price_discount{
+            font-size: 1.2rem;
+            text-decoration: line-through;
+            color: rgb(99, 99, 99);
+        }
+    }
+
+    .container__shipment{
+        margin: 1rem auto;
+        p{
+            color: green;
+        }
+    }
+
+    .container_btnDescription{
+        border: none;
+        background-color: transparent;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        cursor: pointer;
+    }
+
+    .container__description{
+        margin-top: 1rem;
+        height: 200px;
+        overflow-y: auto;
+        p{
+            word-wrap: break-word;
+            font-size: 1rem;
+            font-family: sans-serif;
+            line-height: 20px;
+
+        }
+        @include spawnEffect;
+    }
+
+    hr{
+        width: 80%;
+        height: 2px;
+        margin: 1rem auto;
+    }
+
+    .container__thereIsStock{
+        margin-top: 1rem;
+    }
+    
+
+    .container__buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        margin-top: 1rem;
+        // position: relative;
+        position: absolute;
+
+        bottom: 1rem;
+        left: 0;
+        .container__buttons_buynow{
+            @include styleButtonContentDetail;
+            margin-bottom: 1rem;
+        }
+
+        .container__buttons_addToCart{
+            @include styleButtonContentDetailTwo;
+            
+        }
+    }
+}

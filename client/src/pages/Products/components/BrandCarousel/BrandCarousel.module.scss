@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+
+    .container__card{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: .5rem;
+        cursor: pointer;
+        .container__card__image{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: white;
+            overflow: hidden;
+            img{
+                width: 100%;
+            }
+        }
+
+        p{
+            font-family: "Nunito", sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+}

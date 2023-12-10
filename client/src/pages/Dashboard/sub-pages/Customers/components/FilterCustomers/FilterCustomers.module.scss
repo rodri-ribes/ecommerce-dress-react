@@ -1,0 +1,84 @@
+@import '../../../../../../assets/style/style.scss';
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: $color-secondary;
+
+    .container__search{
+        width: 30%;
+    }
+
+    .container__filters{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 65%;
+        height: 55px;
+
+        .container__filters_select{
+            width: 25%;
+        }
+
+        .container__filters__price{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 45%;
+            height: 55px;
+
+            input{
+                width: 30%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 968px){
+    .container{
+        flex-direction: column;
+        height: auto;
+        gap: .5rem;
+        width: 100%;
+        margin: 0 auto;
+
+        .container__search{
+            width: 100%;
+        }
+        
+        .container__filters{
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+            gap: .5rem;
+
+            .container__filters_select{
+                width: 100%;
+            }
+
+            .container__filters__price{
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+                gap: 1.2rem;
+
+                p{
+                    display: none;
+                }
+
+                input{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

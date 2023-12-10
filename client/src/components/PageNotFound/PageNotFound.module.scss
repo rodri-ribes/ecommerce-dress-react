@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .container__card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 350px;
+        height: 350px;
+        margin: 2rem auto;
+        gap: 1rem;
+        img{
+            width: 100%;
+        }
+
+        p{
+            font-family: "Exo", sans-serif;
+            font-weight: bold;
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+}

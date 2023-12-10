@@ -1,0 +1,31 @@
+@import '../../../../assets/style/style.scss';
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    padding: .5rem;
+    background-color: $color-secondary;
+    border-radius: 5px;
+    gap: 1rem;
+
+    .container__range{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .container__resetFilter{
+        border: none;
+        background-color: transparent;
+        color: $color-three;
+        align-self: flex-end;
+        cursor: pointer;
+    }
+}
+
+

@@ -1,0 +1,55 @@
+@import '../../../../assets/style/style.scss';
+
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    min-height: 21vh;
+    height: auto;
+    .container__card{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        min-width: 300px;
+        width: 25%;
+        height: 80px;
+        border: 1px solid rgb(190, 190, 190);
+        border-radius: 5px;
+        margin: 1rem auto;
+        background-color: $color-secondary;
+
+        .container__card__icon{
+            display: flex;
+            justify-content: center;
+            width: 30%;
+
+            i{
+                font-size: 2rem;
+            }
+        }
+
+        .container__card__content{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 70%;
+
+            h3{
+                font-family: sans-serif;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 968px){
+    .container{
+        .container__card{
+            width: 90%;
+        }
+    }
+}

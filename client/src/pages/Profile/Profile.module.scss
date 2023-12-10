@@ -1,0 +1,112 @@
+@import '../../assets/style/style.scss';
+
+.container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 1300px;
+    height: 500px;
+    margin: 2rem auto;
+    border-radius: 2px;
+
+    .container__panel{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        width: 20%;   
+        height: auto;
+        margin-right: 1rem;
+        // gap: 1rem;
+        
+        border-radius: 5px;
+        background-color: $color-secondary;
+        .container__panel_group{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            height: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 400ms;
+            padding: .5rem;
+            color: $color-three;
+
+            i{
+                font-size: 1.2rem;
+                transition: transform 500ms ease-in-out;
+            }
+            
+            .container__panel_group_link{
+                margin-left: 0.5rem;
+                font-family: 'Baloo 2', cursive;
+                font-size: 1.2rem;
+                transition: transform 500ms ease-in-out;
+            }
+
+            &:hover{
+                background-color: $color-three;
+                color: $color-secondary;
+
+                .container__panel_group_link, i{
+                    transform: translateX(1rem);
+                }
+            }
+
+            
+            &:nth-child(1){
+                border-radius: 5px 5px 0 0;
+            }
+
+            &:nth-child(n):last-child{
+                border-radius: 0 0 5px 5px;
+            }
+        }
+    }
+
+    .container__outlet{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 80%;
+        height: 500px;
+        overflow-y: auto;
+        padding: 0 0rem 0 0;
+        // background-color: $color-secondary;
+
+
+        // &::-webkit-scrollbar{
+        //     width: 10px;
+        // }
+        // &::-webkit-scrollbar-track{
+        //     // background: $color-principal;
+        // }
+        // &::-webkit-scrollbar-thumb{
+        //     // background: $color-secondary;
+        //     border-radius: 2px;
+            
+        // }
+    }
+}
+
+@media screen and (max-width: 968px){
+    .container{
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+
+        .container__panel{
+            width: 95%;
+            height: auto;
+            margin: 1rem auto;
+            gap: 0;
+        }
+        .container__outlet{
+            width: 95%;
+            height: auto;
+            margin: 1rem auto;
+        }
+    }
+}

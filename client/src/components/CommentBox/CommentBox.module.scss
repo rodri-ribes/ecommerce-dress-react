@@ -1,0 +1,96 @@
+@import '../../assets/style/style.scss';
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+
+    .container__box{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        background-color: $color-secondary;
+        padding: 1rem;
+        border-radius: 3px;
+
+        .container__box__wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+    
+            p{
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+        }
+
+        .container__box__form{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+    
+            input{
+                width: 75%;
+                padding: 10px 15px;
+                border: 1px solid black;
+                border-radius: 3px;
+                outline: none;
+                font-size: 1.2rem
+            }
+    
+            button{
+                @include styleButtonContentDetail;
+                width: auto;
+                padding: 10px 15px;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+
+
+
+    .container__comments{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 1000px;
+        margin: 1rem auto;
+        z-index: 50;
+
+        
+    }
+}
+
+
+@media screen and (max-width: 968px){
+    .container{
+        .container__box{
+            .container__box__form{
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: .5rem;
+                input{
+                    width: 100%;
+                }
+
+                button{
+                    align-self: flex-end;
+                }
+            }
+        }
+
+        .container__comments{
+            width: 100%;
+        }
+    }
+}

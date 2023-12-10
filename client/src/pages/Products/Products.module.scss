@@ -1,0 +1,93 @@
+@import '../../assets/style/style.scss';
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1300px;
+    width: 100%;
+    margin: 2rem auto;
+    position: relative;
+
+    .container__sidebar{
+        width: 20%;
+    }
+
+    .container__main{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 75%;
+        gap: 1rem;
+
+        .container__main_btnFilter{
+            display: none;
+        }
+        .container__main__products{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .container__main__alert{
+            width: 100%;
+            margin: 2rem 0;
+        }
+        .container__main__pagination{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 968px){
+    .container{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        max-width: 95%;
+        width: 95%;
+        margin: 1rem auto;
+        
+        .container__sidebar{
+            display: none;
+        }
+
+        .container__main{
+            width: 100%;
+            gap: 1rem;
+
+            .container__main_btnFilter{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: .5rem;
+                @include styleButtonTwo;
+                width: 100px;
+                align-self: flex-end;
+                margin-right: 1rem;
+            }
+
+            .container__main__products{
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 2rem;
+                align-items: center;
+                width: 100%;
+                margin: 0 auto;
+            }
+    
+            .container__main__alert{
+                margin: 2rem auto;
+            }
+        }
+    
+    }
+    
+}

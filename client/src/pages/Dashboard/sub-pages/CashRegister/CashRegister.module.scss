@@ -1,0 +1,113 @@
+@import '../../../../assets/style/style.scss';
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: $color-secondary;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    gap: 1rem;
+
+    .container__customers{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        gap: .5rem;
+        li{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            b{
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+            }
+
+            .creditedMoney{
+                color: green;
+            }
+
+            .unaccreditedMoney{
+                color: red;
+            }
+        }
+    }
+
+    hr{
+        width: 80%;
+        margin: auto;
+        height: 2px;
+    }
+
+    .container__footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100% ;
+        gap: .5rem;
+
+        ul{
+            list-style: none;
+            width: 100%;
+            li{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+
+                font-family: "Quicksand", sans-serif;
+
+                i, p{
+                    font-weight: bold;
+
+                }
+            }
+            hr{
+                margin: .5rem auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 968px){
+    .container{
+        width: 95%;
+        height: 98vh;
+        margin: 1vh auto;
+        position: relative;
+        background-color: transparent;
+
+        .container__customers{
+            background-color: $color-secondary;
+            padding: 1rem;
+            border-radius: 5px;
+            width: 100%;
+            li{
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: .5rem;
+                width: 100%;
+            }
+        }
+
+        .container__footer{
+            background-color: $color-secondary;
+            padding: 1rem;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}

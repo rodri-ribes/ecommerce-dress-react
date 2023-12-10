@@ -1,0 +1,147 @@
+@import '../../assets/style/style.scss';
+
+.container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    background-color: white;
+    animation-name: animationSearchOne;
+    animation-duration: 300ms;
+    animation-iteration-count: 1;
+    position: relative;
+
+    .container__input{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 50px;
+        position: relative;
+        gap: .5rem;
+        .container__input_search{
+            width: 10%;
+            font-size: 1.5rem;
+            margin-left: .5rem;
+        }
+
+        input{
+            outline: none;
+            border: none;
+            padding: 10px;
+            width: 70%;
+            height: 40px;
+            font-size: 1.1rem;
+            // border-radius: 0 50px 50px 0;
+        }
+
+        button{
+            position: absolute;
+            right: .5rem;
+            cursor: pointer;
+            border-radius: 0 50px 50px 0;
+            width: 10%;
+            height: 40px;
+            border: none;
+            background-color: transparent;
+            i{
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .container__list{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        overflow-y: auto;
+        background-color: $color-secondary;
+        position: absolute;
+        top: 7vh;   
+        padding: .5rem;
+        gap: .5rem;
+        border-radius: 3px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.600);
+        .container__list__card{
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            list-style: none;
+            cursor: pointer;
+            img{
+                width: 60px;
+            }
+
+            div{
+                margin-left: .5rem;
+
+                h4{
+                    font-family: "Nunito", sans-serif;
+                }
+            }
+        }
+    }
+
+    @keyframes animationSearchOne {
+        0%{
+            transform: translateY(-100vh);
+        }
+        50%{
+            transform: translateY(-50vh);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+  
+}
+
+@media screen and (max-width: 968px){
+    .container{
+        width: 95%;
+        justify-content: center;
+        animation-name: animationSearch;
+        animation-duration: 200ms;
+        animation-iteration-count: 1;
+
+        @keyframes animationSearch {
+            0%{
+                transform: translateX(-100%);
+            }
+            25%{
+                transform: translateX(-75%);
+            }
+            50%{
+                transform: translateX(-50%);
+            }
+            75%{
+                transform: translateX(-25%);
+            }
+            100%{
+                transform: translateX(0%);
+            }
+        }
+
+       .container__list{
+            width: 390px;
+            height: auto;
+            max-height: 65vh;
+            left: 0rem;
+
+            .container__list__card{
+                
+                img{
+                    width: 100px;
+                }
+    
+            }
+       }
+    
+    }
+}

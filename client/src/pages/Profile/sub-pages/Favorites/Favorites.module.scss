@@ -1,0 +1,90 @@
+@import '../../../../assets/style/style.scss';
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1rem;
+    position: relative;
+    background-color: $color-secondary;
+    border-radius: 5px;
+    .container__product{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        background-color: $color-secondary;
+        margin-bottom: .5rem;
+        // padding: 1rem;
+
+        img{
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            object-position: 0 0;
+        }
+
+        .container__product__content{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100%;
+            margin-left: 1rem;
+
+            a{
+                font-family: 'Dosis', sans-serif;
+                font-size: 1.3rem;
+                text-decoration: none;
+                color: black;
+            }
+
+            .container__product__content__price{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                margin-top: 0.5rem;
+                b{
+                    margin-left: .5rem;
+                }
+
+                p, b{
+                    font-family: 'Varela Round', sans-serif;
+                    font-size: 1.1rem;
+                }
+            }
+
+            button{
+                background-color: transparent;
+                border: none;
+                margin-top: 1rem;
+                color: $color-three;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .container__pagination{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 1rem;
+        background-color: $color-secondary;
+    }
+}
+
+
+@media screen and (max-width: 968px){
+    .container{
+        width: 100%;
+        .container__product{
+            width: 100%;
+
+        }
+    }
+}
