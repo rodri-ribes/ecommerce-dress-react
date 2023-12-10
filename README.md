@@ -15,12 +15,11 @@ This is the first major project I have undertaken: an e-commerce specialized in 
 ***
 A list of technologies and frameworks used within the project:
 
-Client:
 * React: 18.2.0v
 * SCSS: 1.63.3v
 * Swiper: 11.0.4v
 * Firebase: 10.1.0v
-API:
+--
 * MongoDB: 4.9.0v
 * Moongose: 6.5.3v
 * JsonWebToken: 8.5.1v
