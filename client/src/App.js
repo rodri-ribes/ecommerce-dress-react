@@ -32,7 +32,7 @@ function App() {
   }, []);
 
   document.title = "MATEEK"
-  
+
   return (
     <>
       {!location.pathname.includes("/dashboard") && <NavBar />}
