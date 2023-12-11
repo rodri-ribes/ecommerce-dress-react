@@ -15,7 +15,9 @@ server.use(urlencoded({ extended: false }))
 server.use(morgan('dev'));
 server.use(express.json());
 
-server.use(cors())
+server.use(cors({
+   origin: 'https://ecommerce-react-client-jade.vercel.app'
+}))
 
 server.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*')
