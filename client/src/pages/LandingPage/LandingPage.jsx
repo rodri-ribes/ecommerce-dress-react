@@ -7,6 +7,8 @@ import CardProduct from "../../components/CardProduct/CardProduct";
 import FeaturedImagesCarousel from "./components/FeaturedImagesCarousel/FeaturedImagesCarousel";
 import FeaturedCarousel from "./components/FeaturedCarousel/FeaturedCarousel";
 import Features from "./components/Features/Features";
+import Spinner from "../../components/Spinner/Spinner";
+import Warning from '../../components/Warning/Warning';
 
 //------ hooks
 import useQueryProducts from "../../hooks/product/useQueryProducts";
@@ -22,7 +24,7 @@ const CategoryListings = ({ url, images, delay, title }) => {
 };
 
 export default function LandingPage() {
-  let { products } = useQueryProducts();
+  let { getProductsQuery } = useQueryProducts();
 
   let leftTop = [
     "./img/twoSection/left-top/1.jpg",
@@ -98,24 +100,34 @@ export default function LandingPage() {
           <button>PRODUCTOS DESTACADOS</button>
           <button>PRODUCTOS EN OFERTA</button>
         </div> */}
-        <ul className={style.container__threeSection__products}>
-          {products &&
-            products?.filter(f => f.show)?.map((p) => {
-              return (
-                <CardProduct
-                  key={p._id}
-                  id={p?._id}
-                  idConfig={p?.idConfig}
-                  title={p?.title}
-                  price={p?.price}
-                  offer={p?.offer}
-                  rating={p?.rating}
-                  discount={p?.discount}
-                  img={p?.images[0]?.link}
-                />
-              );
-            })}
-        </ul>
+        {getProductsQuery.isLoading ? (
+          <Spinner />
+        ) : (
+          getProductsQuery.isError ?
+          <Warning title={"Se ha producido un error"} text={"Los productos no se han podido cargar; por favor, inténtelo de nuevo más tarde."}/>
+          :
+          getProductsQuery.isSuccess && (
+            <ul className={style.container__threeSection__products}>
+              {getProductsQuery.data
+                ?.filter((f) => f.show)
+                ?.map((p) => {
+                  return (
+                    <CardProduct
+                      key={p._id}
+                      id={p?._id}
+                      idConfig={p?.idConfig}
+                      title={p?.title}
+                      price={p?.price}
+                      offer={p?.offer}
+                      rating={p?.rating}
+                      discount={p?.discount}
+                      img={p?.images[0]?.link}
+                    />
+                  );
+                })}
+            </ul>
+          )
+        )}
       </div>
     </div>
   );
