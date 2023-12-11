@@ -15,17 +15,15 @@ server.use(urlencoded({ extended: false }))
 server.use(morgan('dev'));
 server.use(express.json());
 
-server.use(cors({
-   origin: 'https://ecommerce-react-client-jade.vercel.app'
-}))
+const corsOptions = {
+    origin: 'https://ecommerce-react-client-jade.vercel.app',
+    credentials: true,
+    methods: 'GET, POST, OPTIONS, PUT, DELETE',
+    allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
+  };
+  
+server.use(cors(corsOptions));
 
-server.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*')
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-    next();
-})
 
 server.use('/', routes);
 
